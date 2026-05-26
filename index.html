@@ -551,12 +551,12 @@ body{
         <div class="btn-demo">
           <button class="tone-btn tone-btn-icon" type="button">+</button>
           <button class="tone-btn tone-btn-icon" type="button">•</button>
-          <button class="btn btn-icon compact" type="button">⌕</button>
+          <button class="tone-btn tone-btn-icon compact" type="button">⌕</button>
         </div>
         <div class="btn-demo">
           <button class="tone-btn tone-btn-text" type="button">导出报表</button>
           <button class="tone-btn tone-btn-text" type="button">批量审核</button>
-          <button class="btn btn-text primary" type="button">新建任务</button>
+          <button class="tone-btn tone-btn-text primary" type="button">新建任务</button>
         </div>
         <div class="btn-demo">
           <button class="tone-btn tone-btn-avatar" type="button">LZ</button>
@@ -729,12 +729,12 @@ body{
         <div class="tone-modal">
           <div class="tone-modal-head">
             <h4>确认删除</h4>
-            <button class="tone-modal-close"
+            <button class="tone-modal-close" type="button">×</button>
           </div>
           <div class="tone-modal-body">确定要删除这条记录吗？此操作不可撤销，关联的审批流程也将一并终止。</div>
           <div class="tone-modal-foot">
             <button class="tone-btn tone-btn-text" type="button">取消</button>
-            <button class="btn btn-text primary" type="button">确认删除</button>
+            <button class="tone-btn tone-btn-text primary" type="button">确认删除</button>
           </div>
         </div>
       </div>
@@ -809,10 +809,10 @@ body{
   </div>
   <div class="cmp-card">
     <div class="cmp-preview" style="min-height:260px;align-items:flex-start">
-      <div class="dropdown-demo">
+      <div class="tone-dropdown">
         <button class="tone-dropdown-trigger active" type="button">
           <span>更多操作</span>
-          <span class="arrow">▼</span>
+          <span style="font-size:10px;color:var(--sg-muted)">▼</span>
         </button>
         <ul class="tone-dropdown-menu">
           <li>编辑详情</li>
@@ -1268,8 +1268,8 @@ body{
       <div class="cmp-preview column" style="gap:0;padding:20px;align-items:center;background:var(--page-bg)">
         <div class="tone-sheet">
           <div class="handle"><span></span></div>
-          <div class="bs-title">分享</div>
-          <div class="bs-body">
+          <div class="title">分享</div>
+          <div class="body">
             <button type="button"><span class="icon">✉</span>发送邮件</button>
             <button type="button"><span class="icon">🔗</span>复制链接</button>
             <button type="button"><span class="icon">📋</span>生成报告</button>
