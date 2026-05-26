@@ -176,6 +176,7 @@ body{
     <a href="#loading">加载</a>
     <a href="#status">状态</a>
     <a href="#mobile">移动端</a>
+    <a href="#icons">图标</a>
   </nav>
 </header>
 
@@ -592,7 +593,7 @@ body{
       <p class="sg-lead">搜索框、下拉选择器、开关和分段控件。</p>
     </div>
   </div>
-  <div class="cmp-grid double">
+  <div class="cmp-grid" style="grid-template-columns:1fr 1fr 1fr">
     <div class="cmp-card">
       <div class="cmp-preview column" style="gap:24px">
         <label class="tone-search"><span style="font-size:18px"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg></span><input type="search" placeholder="搜索任务、订单..." /></label>
@@ -600,43 +601,74 @@ body{
         <label class="tone-toggle"><input type="checkbox" checked /><span class="track"></span><span>自动刷新</span></label>
       </div>
       <div class="cmp-info">
-        <h4>Search（搜索框）</h4>
+        <h4>Search · Select · Toggle</h4>
+        <p class="desc">搜索框、下拉选择器、开关控件。</p>
         <div class="cmp-specs">
-          <div class="spec-row"><span class="spec-label">高度</span><span class="spec-value">42px</span></div>
-          <div class="spec-row"><span class="spec-label">宽度</span><span class="spec-value">210–268px</span></div>
-          <div class="spec-row"><span class="spec-label">样式</span><span class="spec-value">仅底部边框 1px solid --line-strong</span></div>
-          <div class="spec-row"><span class="spec-label">字号</span><span class="spec-value">15px</span></div>
-        </div>
-        <h4 style="margin-top:18px">Select（下拉选择器）</h4>
-        <div class="cmp-specs">
-          <div class="spec-row"><span class="spec-label">高度</span><span class="spec-value">40px / 最小宽度 110px</span></div>
-          <div class="spec-row"><span class="spec-label">样式</span><span class="spec-value">仅底部边框，无 outline</span></div>
-          <div class="spec-row"><span class="spec-label">字号</span><span class="spec-value">14px</span></div>
-        </div>
-        <h4 style="margin-top:18px">Toggle（开关）</h4>
-        <div class="cmp-specs">
-          <div class="spec-row"><span class="spec-label">轨道</span><span class="spec-value">48×24px / 圆角 999px</span></div>
-          <div class="spec-row"><span class="spec-label">滑块</span><span class="spec-value">14px 圆形 / left 从 4 到 28px</span></div>
-          <div class="spec-row"><span class="spec-label">动画</span><span class="spec-value">180ms ease（边框、背景、位置）</span></div>
+          <div class="spec-row"><span class="spec-label">Search</span><span class="spec-value">42px / 底部边框 / 15px</span></div>
+          <div class="spec-row"><span class="spec-label">Select</span><span class="spec-value">40px / 无 outline / 底部边框</span></div>
+          <div class="spec-row"><span class="spec-label">Toggle</span><span class="spec-value">48×24px 轨道 / 180ms 动画</span></div>
         </div>
       </div>
     </div>
+
     <div class="cmp-card">
-      <div class="cmp-preview">
-        <div class="tone-tabs">
-          <button class="active">今日</button>
-          <button>7 天</button>
-          <button>30 天</button>
+      <div class="cmp-preview column" style="gap:20px">
+        <label class="tone-checkbox"><input type="checkbox" checked /><span class="box"></span>全选</label>
+        <label class="tone-checkbox"><input type="checkbox" /><span class="box"></span>仅查看未读</label>
+        <label class="tone-checkbox"><input type="checkbox" /><span class="box"></span>包含已归档</label>
+        <div style="display:flex;gap:28px;padding-top:8px;border-top:1px solid var(--sg-line)">
+          <label class="tone-radio"><input type="radio" name="r" checked /><span class="ring"></span>按时间</label>
+          <label class="tone-radio"><input type="radio" name="r" /><span class="ring"></span>按状态</label>
+          <label class="tone-radio"><input type="radio" name="r" /><span class="ring"></span>按优先级</label>
         </div>
       </div>
       <div class="cmp-info">
-        <h4>Segmented Control（分段控件）</h4>
-        <p class="desc">按钮组形式的互斥选项切换器。</p>
+        <h4>Checkbox · Radio</h4>
+        <p class="desc">多选和单选控件，自定义样式隐藏原生 input。</p>
         <div class="cmp-specs">
-          <div class="spec-row"><span class="spec-label">布局</span><span class="spec-value">inline-flex / gap 8px</span></div>
-          <div class="spec-row"><span class="spec-label">选项</span><span class="spec-value">最小宽度 64px / 圆角 999px</span></div>
-          <div class="spec-row"><span class="spec-label">默认态</span><span class="spec-value">文字色 --muted / 边框 --line</span></div>
-          <div class="spec-row"><span class="spec-label">激活态</span><span class="spec-value">文字 + 边框 → --ink</span></div>
+          <div class="spec-row"><span class="spec-label">选框尺寸</span><span class="spec-value">20×20px / 圆角 4px / 圆角 50%</span></div>
+          <div class="spec-row"><span class="spec-label">选中态</span><span class="spec-value">背景 → --ink / 勾选旋转动画</span></div>
+          <div class="spec-row"><span class="spec-label">悬停</span><span class="spec-value">边框 → --ink</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cmp-card">
+      <div class="cmp-preview column" style="gap:16px">
+        <div style="width:100%"><span class="tone-input-label">任务名称</span><input class="tone-input" type="text" placeholder="输入任务名称" /></div>
+        <div style="width:100%"><span class="tone-input-label">备注</span><textarea class="tone-textarea" placeholder="选填备注信息"></textarea></div>
+        <div style="width:100%"><span class="tone-input-label">截止日期</span><label class="tone-date"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><input type="date" value="2026-06-01" /></label></div>
+      </div>
+      <div class="cmp-info">
+        <h4>Input · Textarea · Date</h4>
+        <p class="desc">文本输入框、多行文本、日期选择器。</p>
+        <div class="cmp-specs">
+          <div class="spec-row"><span class="spec-label">Input</span><span class="spec-value">42px / 圆角 8px / 边框 --line</span></div>
+          <div class="spec-row"><span class="spec-label">Textarea</span><span class="spec-value">最小 98px / 可拖拽缩放</span></div>
+          <div class="spec-row"><span class="spec-label">Date</span><span class="spec-value">42px / 日历图标 / 原生 date</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cmp-card" style="grid-column:1/-1">
+      <div class="cmp-preview column" style="gap:0;padding:0">
+        <nav class="tone-content-tabs">
+          <a class="active" href="#">全部任务</a>
+          <a href="#">待审核</a>
+          <a href="#">进行中</a>
+          <a href="#">已完成</a>
+          <a href="#">已归档</a>
+        </nav>
+        <div style="padding:32px 36px;font-size:14px;color:var(--sg-ink-soft)">内容区域与当前激活的标签页关联。</div>
+      </div>
+      <div class="cmp-info">
+        <h4>Content Tabs（内容标签页）</h4>
+        <p class="desc">水平标签栏，底部边框指示激活态。与 Segmented Control 不同，用于切换内容区域。</p>
+        <div class="cmp-specs">
+          <div class="spec-row"><span class="spec-label">布局</span><span class="spec-value">flex / 底部边框 1px</span></div>
+          <div class="spec-row"><span class="spec-label">标签</span><span class="spec-value">内边距 12px 20px / 14px</span></div>
+          <div class="spec-row"><span class="spec-label">激活态</span><span class="spec-value">底部 1px solid --ink + 文字 --ink</span></div>
+          <div class="spec-row"><span class="spec-label">默认态</span><span class="spec-value">文字 --muted / 底部透明</span></div>
         </div>
       </div>
     </div>
@@ -1286,6 +1318,70 @@ body{
           <div class="spec-row"><span class="spec-label">选项高度</span><span class="spec-value">62px（14px padding 上下）</span></div>
           <div class="spec-row"><span class="spec-label">选项圆角</span><span class="spec-value">8px</span></div>
           <div class="spec-row"><span class="spec-label">选项图标</span><span class="spec-value">32×32px / 圆角 50% / 细边框</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 19 SVG ICONS ==================== -->
+<section class="sg-section" id="icons">
+  <div class="sg-section-header">
+    <span class="sg-section-num">19</span>
+    <div>
+      <h3>SVG Icons · 图标规范</h3>
+      <p class="sg-lead">Tone 统一使用内联 SVG 作为图标方案，以下为设计约定。</p>
+    </div>
+  </div>
+  <div class="cmp-grid">
+    <div class="cmp-card">
+      <div class="cmp-info">
+        <h4>设计约定</h4>
+        <div class="cmp-specs">
+          <div class="spec-row"><span class="spec-label">尺寸</span><span class="spec-value">width/height: 1em（继承父级字号）</span></div>
+          <div class="spec-row"><span class="spec-label">网格</span><span class="spec-value">viewBox: 0 0 24 24（标准 24px 网格）</span></div>
+          <div class="spec-row"><span class="spec-label">描边</span><span class="spec-value">fill="none" / stroke="currentColor" / stroke-width="2"</span></div>
+          <div class="spec-row"><span class="spec-label">端点</span><span class="spec-value">stroke-linecap="round" / stroke-linejoin="round"</span></div>
+          <div class="spec-row"><span class="spec-label">实心</span><span class="spec-value">fill="currentColor" stroke="none"（极少使用）</span></div>
+          <div class="spec-row"><span class="spec-label">颜色</span><span class="spec-value">始终使用 currentColor，继承父级文字色</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="cmp-card">
+      <div class="cmp-preview" style="gap:24px;flex-wrap:wrap">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--sg-ink)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-9 9 9"/><path d="M5 10v10a1 1 0 001 1h3v-5h6v5h3a1 1 0 001-1V10"/></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--sg-ink)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--sg-ink)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--sg-ink)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--sg-ink)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--sg-ink)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--sg-ink)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--sg-ink)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--sg-ink)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="6" x2="12" y2="14"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--sg-ink)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--sg-ink)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--sg-ink)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4l-10 8L2 4"/></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--sg-ink)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--sg-ink)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      </div>
+      <div class="cmp-info">
+        <h4>Icon Set（图标一览）</h4>
+        <p class="desc">Tone 中使用的全部 14 个标准图标。统一 24×24px 网格，2px 圆角描边。</p>
+        <div class="cmp-specs">
+          <div class="spec-row"><span class="spec-label">Home</span><span class="spec-value">导航首页</span></div>
+          <div class="spec-row"><span class="spec-label">Square</span><span class="spec-value">导航 / 菜单项</span></div>
+          <div class="spec-row"><span class="spec-label">Circle</span><span class="spec-value">导航 / 状态</span></div>
+          <div class="spec-row"><span class="spec-label">Settings</span><span class="spec-value">设置 / 自动化</span></div>
+          <div class="spec-row"><span class="spec-label">Search</span><span class="spec-value">搜索 / 查找</span></div>
+          <div class="spec-row"><span class="spec-label">Plus</span><span class="spec-value">添加 / 新建</span></div>
+          <div class="spec-row"><span class="spec-label">Close</span><span class="spec-value">关闭 / 删除</span></div>
+          <div class="spec-row"><span class="spec-label">Check</span><span class="spec-value">成功 / 完成</span></div>
+          <div class="spec-row"><span class="spec-label">Alert</span><span class="spec-value">警告 / 错误</span></div>
+          <div class="spec-row"><span class="spec-label">Arrow L</span><span class="spec-value">返回 / 后退</span></div>
+          <div class="spec-row"><span class="spec-label">Arrow D</span><span class="spec-value">展开 / 下拉</span></div>
+          <div class="spec-row"><span class="spec-label">Mail</span><span class="spec-value">邮件 / 发送</span></div>
+          <div class="spec-row"><span class="spec-label">Link</span><span class="spec-value">复制 / 链接</span></div>
+          <div class="spec-row"><span class="spec-label">Calendar</span><span class="spec-value">日期 / 日历</span></div>
         </div>
       </div>
     </div>

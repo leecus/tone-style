@@ -372,7 +372,187 @@ button { cursor: pointer; }
   background: var(--tone-ink);
 }
 
-/* ---------- Table ---------- */
+/* ---------- Checkbox ---------- */
+.tone-checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--tone-ink);
+  cursor: pointer;
+  line-height: 1.4;
+}
+.tone-checkbox input {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  opacity: 0;
+}
+.tone-checkbox .box {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--tone-line-strong);
+  border-radius: 4px;
+  background: var(--tone-surface);
+  flex-shrink: 0;
+  transition: border-color .18s, background .18s;
+}
+.tone-checkbox .box::after {
+  position: absolute;
+  top: 3px;
+  left: 6px;
+  width: 5px;
+  height: 9px;
+  border: 2px solid #fff;
+  border-top: 0;
+  border-left: 0;
+  transform: rotate(45deg) scale(0);
+  transition: transform .15s;
+  content: "";
+}
+.tone-checkbox input:checked + .box {
+  border-color: var(--tone-ink);
+  background: var(--tone-ink);
+}
+.tone-checkbox input:checked + .box::after { transform: rotate(45deg) scale(1); }
+.tone-checkbox:hover .box { border-color: var(--tone-ink); }
+
+/* ---------- Radio ---------- */
+.tone-radio {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--tone-ink);
+  cursor: pointer;
+  line-height: 1.4;
+}
+.tone-radio input {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  opacity: 0;
+}
+.tone-radio .ring {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--tone-line-strong);
+  border-radius: 50%;
+  background: var(--tone-surface);
+  flex-shrink: 0;
+  transition: border-color .18s;
+}
+.tone-radio .ring::after {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--tone-ink);
+  transform: scale(0);
+  transition: transform .15s;
+  content: "";
+}
+.tone-radio input:checked + .ring { border-color: var(--tone-ink); }
+.tone-radio input:checked + .ring::after { transform: scale(1); }
+.tone-radio:hover .ring { border-color: var(--tone-ink); }
+
+/* ---------- Text Input ---------- */
+.tone-input {
+  display: block;
+  width: 100%;
+  height: 42px;
+  padding: 0 14px;
+  border: 1px solid var(--tone-line);
+  border-radius: var(--tone-radius);
+  background: var(--tone-surface);
+  color: var(--tone-ink);
+  font-family: var(--tone-font-sans);
+  font-size: 14px;
+  outline: 0;
+  transition: border-color .18s;
+}
+.tone-input:focus { border-color: var(--tone-ink); }
+.tone-input::placeholder { color: var(--tone-muted); }
+.tone-input-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--tone-ink-soft);
+  margin-bottom: 6px;
+}
+
+/* ---------- Textarea ---------- */
+.tone-textarea {
+  display: block;
+  width: 100%;
+  min-height: 98px;
+  padding: 10px 14px;
+  border: 1px solid var(--tone-line);
+  border-radius: var(--tone-radius);
+  background: var(--tone-surface);
+  color: var(--tone-ink);
+  font-family: var(--tone-font-sans);
+  font-size: 14px;
+  line-height: 1.5;
+  outline: 0;
+  resize: vertical;
+  transition: border-color .18s;
+}
+.tone-textarea:focus { border-color: var(--tone-ink); }
+.tone-textarea::placeholder { color: var(--tone-muted); }
+
+/* ---------- Date Input ---------- */
+.tone-date {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 42px;
+  padding: 0 14px;
+  border: 1px solid var(--tone-line);
+  border-radius: var(--tone-radius);
+  background: var(--tone-surface);
+  color: var(--tone-muted);
+  font-size: 14px;
+  transition: border-color .18s;
+}
+.tone-date input {
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--tone-ink);
+  font-family: var(--tone-font-sans);
+  font-size: 14px;
+  min-width: 120px;
+}
+.tone-date:focus-within { border-color: var(--tone-ink); }
+
+/* ---------- Content Tabs ---------- */
+.tone-content-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--tone-line);
+  gap: 0;
+}
+.tone-content-tabs a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  color: var(--tone-muted);
+  text-decoration: none;
+  font-size: 14px;
+  border-bottom: 1px solid transparent;
+  margin-bottom: -1px;
+  transition: color .18s, border-color .18s;
+}
+.tone-content-tabs a:hover { color: var(--tone-ink-soft); }
+.tone-content-tabs a.active {
+  color: var(--tone-ink);
+  border-bottom-color: var(--tone-ink);
+}
 .tone-table {
   width: 100%;
   border-collapse: collapse;
@@ -1180,3 +1360,20 @@ button { cursor: pointer; }
   }
   .tone-metrics article:last-child { border-bottom: 0; }
 }
+
+/* ============================================
+   SVG Icon — conventions
+   ============================================
+   All Tone icons use inline SVGs with these conventions:
+   - width/height: 1em (inherits parent font-size)
+   - viewBox: 0 0 24 24 (standard 24px grid)
+   - fill="none" / stroke="currentColor"
+   - stroke-width="2" / stroke-linecap="round" / stroke-linejoin="round"
+   - Filled icons use: fill="currentColor" stroke="none"
+
+   Usage: <svg width="1em" height="1em" viewBox="0 0 24 24"
+             fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round">
+            <path d="..."/>
+          </svg>
+   ============================================ */
