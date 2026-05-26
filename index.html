@@ -11,8 +11,8 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --page-bg:#f4f3ef;
-  --card-bg:#fcfcfa;
+  --page-bg:#f6f6f4;
+  --card-bg:#fbfbfa;
   --ink:#1c1c1a;
   --ink-soft:#5a5a55;
   --muted:#999892;
@@ -30,7 +30,9 @@
 html{scroll-behavior:smooth}
 body{
   min-height:100vh;
-  background:var(--page-bg);
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.025) 1px, transparent 1px) 0 0 / 72px 72px,
+    var(--page-bg);
   color:var(--ink);
   font-family:var(--font-sans);
   font-weight:400;
@@ -42,7 +44,7 @@ body{
   display:flex;align-items:center;gap:24px;
   padding:0 clamp(24px,4vw,56px);
   height:72px;
-  background:rgba(244,243,239,.88);
+  background:rgba(246,246,244,.88);
   backdrop-filter:blur(16px);
   border-bottom:1px solid var(--line);
   overflow-x:auto;
