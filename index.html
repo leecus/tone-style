@@ -22,6 +22,19 @@
   --sg-sans:"Outfit",-apple-system,sans-serif;
   --sg-mono:"JetBrains Mono","SF Mono",monospace;
   --sg-max-w:1200px;
+  /* aliases for inline demo styles */
+  --page-bg:var(--sg-bg);
+  --card-bg:var(--sg-surface);
+  --ink:var(--sg-ink);
+  --ink-soft:var(--sg-ink-soft);
+  --muted:var(--sg-muted);
+  --line:var(--sg-line);
+  --line-strong:var(--sg-line-strong);
+  --accent:#7c6f5e;
+  --radius:8px;
+  --font-sans:var(--sg-sans);
+  --font-mono:var(--sg-mono);
+  --font-display:var(--sg-display);
 }
 body{
   background:
@@ -367,7 +380,7 @@ body{
   <div class="cmp-grid double">
     <div class="cmp-card">
       <div class="cmp-preview column" style="gap:6px;padding:32px 36px">
-        <a class="nav-item-demo active" href="#"><span class="glyph" style="border-color:var(--ink)">⌂</span>概览</a>
+        <a class="tone-nav-item active" href="#"><span class="glyph" style="border-color:var(--ink)">⌂</span>概览</a>
         <a class="tone-nav-item" href="#"><span class="glyph">□</span>订单</a>
         <a class="tone-nav-item" href="#"><span class="glyph">○</span>客户</a>
         <a class="tone-nav-item" href="#"><span class="glyph">⌁</span>自动化</a>
@@ -384,7 +397,7 @@ body{
           <div class="spec-row"><span class="spec-label">悬停 / 激活</span><span class="spec-value">颜色 → --ink + 右移 2px</span></div>
         </div>
         <div class="state-row">
-          <div class="state-item"><a class="nav-item-demo active" href="#" style="pointer-events:none"><span class="glyph" style="border-color:var(--ink)">⌂</span><span style="display:block;margin-top:2px;font-family:var(--font-mono);font-size:11px;color:var(--muted)">Active</span></a></div>
+          <div class="state-item"><a class="tone-nav-item active" href="#" style="pointer-events:none"><span class="glyph" style="border-color:var(--ink)">⌂</span><span style="display:block;margin-top:2px;font-family:var(--font-mono);font-size:11px;color:var(--muted)">Active</span></a></div>
           <div class="state-item"><a class="tone-nav-item" href="#" style="pointer-events:none"><span class="glyph">□</span><span style="display:block;margin-top:2px;font-family:var(--font-mono);font-size:11px;color:var(--muted)">Default</span></a></div>
         </div>
       </div>
@@ -712,14 +725,14 @@ body{
   </div>
   <div class="cmp-card">
     <div class="cmp-preview column" style="padding:0;gap:0">
-      <div class="modal-mask">
-        <div class="modal-box">
-          <div class="modal-head">
+      <div class="tone-modal-mask">
+        <div class="tone-modal">
+          <div class="tone-modal-head">
             <h4>确认删除</h4>
-            <button class="close" type="button">×</button>
+            <button class="tone-modal-close"
           </div>
-          <div class="modal-body">确定要删除这条记录吗？此操作不可撤销，关联的审批流程也将一并终止。</div>
-          <div class="modal-foot">
+          <div class="tone-modal-body">确定要删除这条记录吗？此操作不可撤销，关联的审批流程也将一并终止。</div>
+          <div class="tone-modal-foot">
             <button class="tone-btn tone-btn-text" type="button">取消</button>
             <button class="btn btn-text primary" type="button">确认删除</button>
           </div>
@@ -752,19 +765,19 @@ body{
   </div>
   <div class="cmp-card">
     <div class="cmp-preview column" style="gap:12px;align-items:flex-start">
-      <div class="toast-stack">
-        <div class="toast success">
-          <span class="toast-icon">✓</span>
+      <div class="tone-toast-stack">
+        <div class="tone-toast success">
+          <span class="tone-toast-icon">✓</span>
           <span>报表导出成功，已发送至你的邮箱</span>
           <button class="close" type="button">×</button>
         </div>
-        <div class="toast error">
-          <span class="toast-icon">!</span>
+        <div class="tone-toast error">
+          <span class="tone-toast-icon">!</span>
           <span>网络连接超时，请稍后重试</span>
           <button class="close" type="button">×</button>
         </div>
-        <div class="toast info">
-          <span class="toast-icon">i</span>
+        <div class="tone-toast info">
+          <span class="tone-toast-icon">i</span>
           <span>系统将于 02:00 进行维护升级</span>
           <button class="close" type="button">×</button>
         </div>
@@ -797,11 +810,11 @@ body{
   <div class="cmp-card">
     <div class="cmp-preview" style="min-height:260px;align-items:flex-start">
       <div class="dropdown-demo">
-        <button class="dropdown-trigger active" type="button">
+        <button class="tone-dropdown-trigger active" type="button">
           <span>更多操作</span>
           <span class="arrow">▼</span>
         </button>
-        <ul class="dropdown-menu">
+        <ul class="tone-dropdown-menu">
           <li>编辑详情</li>
           <li>复制链接</li>
           <li>查看日志</li>
@@ -940,13 +953,13 @@ body{
     <div class="cmp-card">
       <div class="cmp-preview column" style="gap:20px">
         <div class="spinner-demo">
-          <span class="spinner lg"></span>
-          <span class="spinner"></span>
-          <span class="spinner sm"></span>
+          <span class="tone-spinner lg"></span>
+          <span class="tone-spinner"></span>
+          <span class="tone-spinner sm"></span>
         </div>
         <div class="spinner-demo" style="gap:24px">
-          <span class="spinner-label"><span class="spinner"></span>加载中...</span>
-          <span class="spinner-label"><span class="spinner"></span>正在处理</span>
+           <span style="display:flex;align-items:center;gap:12px;font-size:14px;color:var(--sg-ink-soft)"><span class="tone-spinner"></span>加载中...</span>
+          <span style="display:flex;align-items:center;gap:12px;font-size:14px;color:var(--sg-ink-soft)"><span class="tone-spinner"></span>正在处理</span>
         </div>
       </div>
       <div class="cmp-info">
@@ -964,11 +977,11 @@ body{
     <div class="cmp-card">
       <div class="cmp-preview column">
         <div class="skeleton-demo">
-          <div class="skeleton h36 w80"></div>
-          <div class="skeleton w64"></div>
-          <div class="skeleton w48"></div>
-          <div class="skeleton w80"></div>
-          <div class="skeleton"></div>
+          <div class="tone-skeleton h36 w80"></div>
+          <div class="tone-skeleton w64"></div>
+          <div class="tone-skeleton w48"></div>
+          <div class="tone-skeleton w80"></div>
+          <div class="tone-skeleton"></div>
         </div>
       </div>
       <div class="cmp-info">
@@ -1044,13 +1057,13 @@ body{
   <div class="cmp-grid double">
     <div class="cmp-card">
       <div class="cmp-preview column" style="gap:0;padding:24px;align-items:center;background:var(--page-bg)">
-        <div class="mobile-shell">
-          <div class="mh">
+        <div class="tone-mobile-shell">
+          <div class="tone-mobile-head">
             <button class="back" type="button">←</button>
             <h4>订单详情</h4>
-            <button class="icon" type="button">⋯</button>
+            <button class="action" type="button">⋯</button>
           </div>
-          <div class="mbody">
+          <div class="tone-mobile-body">
             <div class="stat">
               <div><span class="k">今日订单</span><strong class="v">48</strong></div>
               <div><span class="k">营收</span><strong class="v">¥12.6k</strong></div>
@@ -1061,7 +1074,7 @@ body{
               <li><span class="dot" style="background:#9a735d"></span>库存预警阈值调整<span class="time">11:03</span></li>
             </ul>
           </div>
-          <nav class="mobile-tabs">
+          <nav class="tone-tabbar">
             <a class="active" href="#"><span class="icon">⌂</span>概览</a>
             <a href="#"><span class="icon">□</span>订单</a>
             <a href="#"><span class="icon">○</span>客户</a>
@@ -1084,7 +1097,7 @@ body{
     <!-- Bottom Tab Bar -->
     <div class="cmp-card">
       <div class="cmp-preview column" style="gap:0;padding:24px;align-items:center;background:var(--page-bg)">
-        <nav class="mobile-tabs" style="border:1px solid var(--line);border-radius:12px;overflow:hidden;width:100%;max-width:380px">
+        <nav class="tone-tabbar" style="border:1px solid var(--line);border-radius:12px;overflow:hidden;width:100%;max-width:380px">
           <a class="active" href="#"><span class="icon">⌂</span>首页</a>
           <a href="#"><span class="icon">□</span>订单</a>
           <a href="#"><span class="icon">⌕</span>搜索</a>
@@ -1148,7 +1161,7 @@ body{
     <!-- Mobile Filter -->
     <div class="cmp-card">
       <div class="cmp-preview column" style="gap:0;padding:24px;align-items:center;background:var(--page-bg)">
-        <details class="mobile-filter" open>
+        <details class="tone-mobile-filter" open>
           <summary>筛选条件 <span class="arrow">▼</span></summary>
           <div class="filter-body">
             <button class="active">今日</button>
