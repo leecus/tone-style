@@ -961,6 +961,37 @@ button { cursor: pointer; }
   inset: 0;
   background: rgba(28, 28, 26, .2);
 }
+.tone-drawer-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--tone-line);
+  margin-bottom: 6px;
+}
+.tone-drawer-brand span {
+  font-size: 15px;
+  font-weight: 600;
+}
+.tone-drawer a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  color: var(--tone-muted);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color .15s, background .15s;
+}
+.tone-drawer a:hover {
+  color: var(--tone-ink);
+  background: rgba(0, 0, 0, .03);
+}
+.tone-drawer a.active {
+  color: var(--tone-ink);
+  background: rgba(0, 0, 0, .04);
+}
 
 /* ---------- Table Card (mobile) ---------- */
 .tone-table-card {
